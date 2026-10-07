@@ -50,7 +50,7 @@ npm run dev
 
 The visual system takes broad inspiration from modern SaaS conversion patterns: clear value propositions, strong CTAs, proof-led sections, animated interactions, structured cards and responsive layouts. It is not a clone of another site.
 
-Public demo imagery uses free-to-use Pexels photo pages discovered during design research. Relevant sources include:
+Public demo imagery uses free-to-use Pexels photo pages discovered during design research. Relevant sources include::
 - https://www.pexels.com/photo/plain-tote-bag-9869067/
 - https://www.pexels.com/photo/a-person-holding-a-tote-bag-6787035/
 - https://www.pexels.com/photo/white-and-blue-tote-bag-with-logo-on-chair-8954490/
