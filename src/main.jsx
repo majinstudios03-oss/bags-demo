@@ -91,6 +91,15 @@ const testimonials = [
   { quote: 'We wanted something practical but still brand-forward. The finished bags did the job.', name: 'Retail partner', role: 'Branding project' },
 ];
 
+const CACHE_VERSION = 'v2_9491554114';
+try {
+  if (localStorage.getItem('jsm_cache_ver') !== CACHE_VERSION) {
+    localStorage.removeItem('jsm_settings');
+    localStorage.removeItem('jsm_enquiries');
+    localStorage.setItem('jsm_cache_ver', CACHE_VERSION);
+  }
+} catch {}
+
 const clone = (v) => JSON.parse(JSON.stringify(v));
 function useStored(key, initial) {
   const [value, setValue] = useState(() => {
@@ -102,7 +111,7 @@ function useStored(key, initial) {
           localStorage.setItem(key, JSON.stringify(initial));
           return clone(initial);
         }
-        if (key === 'jsm_settings' && (String(parsed?.phone).includes('94408') || String(parsed?.whatsapp).includes('94408'))) {
+        if (key === 'jsm_settings' && (parsed?.phone !== PHONE || parsed?.whatsapp !== PHONE)) {
           localStorage.setItem(key, JSON.stringify(initial));
           return clone(initial);
         }
