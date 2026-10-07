@@ -20,8 +20,8 @@ const Instagram = ({ size = 18, ...props }) => (
   </svg>
 );
 
-const WA = '919440863516';
-const PHONE = '09440863516';
+const WA = '919491554114';
+const PHONE = '9491554114';
 const ADDRESS = 'Rajahmundry, Andhra Pradesh';
 const IG = 'https://www.instagram.com/jsm_bags/';
 
@@ -99,6 +99,10 @@ function useStored(key, initial) {
       if (raw) {
         const parsed = JSON.parse(raw);
         if (Array.isArray(parsed) && parsed.some(x => typeof x?.image === 'string' && x.image.includes('/assets/work-'))) {
+          localStorage.setItem(key, JSON.stringify(initial));
+          return clone(initial);
+        }
+        if (key === 'jsm_settings' && (String(parsed?.phone).includes('94408') || String(parsed?.whatsapp).includes('94408'))) {
           localStorage.setItem(key, JSON.stringify(initial));
           return clone(initial);
         }
